@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทดสอบ Machine Learning Model</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d1fae5, #6ee7b7);
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #065f46;
+            font-size: 24px;
+        }
+        p {
+            color: #374151;
+            font-size: 16px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px 10px;
+            font-size: 16px;
+            color: white;
+            background: #047857;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 10px rgba(4, 120, 87, 0.3);
+        }
+        .button:hover {
+            background: #065f46;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ทดสอบ Machine Learning Model</h1>
+        <p>กรอกข้อมูลเพื่อตรวจสอบราคาบ้านที่คาดการณ์ได้</p>
+        <form method="post">
+            <input type="text" name="area" placeholder="พื้นที่บ้าน (ตร.ม.)" required>
+            <input type="text" name="bedrooms" placeholder="จำนวนห้องนอน" required>
+            <input type="text" name="bathrooms" placeholder="จำนวนห้องน้ำ" required>
+            <input type="text" name="stories" placeholder="จำนวนชั้น" required>
+            <input type="text" name="parking" placeholder="จำนวนที่จอดรถ" required>
+            <button type="submit" class="button">ทำนายราคา</button>
+        </form>
+        {% if prediction %}
+            <h2>ราคาที่คาดการณ์: {{ prediction }} บาท</h2>
+        {% endif %}
+        <a href="/" class="button">กลับหน้าหลัก</a>
+    </div>
+</body>
+</html>

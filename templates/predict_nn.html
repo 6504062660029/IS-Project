@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทดสอบ Neural Network Model</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ede9fe, #c4b5fd);
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4c1d95;
+            font-size: 24px;
+        }
+        p {
+            color: #374151;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px 10px;
+            font-size: 16px;
+            color: white;
+            background: #7c3aed;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 10px rgba(124, 58, 237, 0.3);
+        }
+        .button:hover {
+            background: #5b21b6;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ทดสอบ Neural Network Model</h1>
+        <p>อัปโหลดรูปภาพตัวเลขเพื่อตรวจสอบผลลัพธ์ของโมเดล</p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit" class="button">ทำนายตัวเลข</button>
+        </form>
+        {% if prediction %}
+            <h2>ตัวเลขที่คาดการณ์: {{ prediction }}</h2>
+        {% endif %}
+        <a href="/" class="button">กลับหน้าหลัก</a>
+    </div>
+</body>
+</html>

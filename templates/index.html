@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก - Machine Learning & Neural Network</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3f4f6, #dbeafe);
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        h2, h3 {
+            color: #2563eb;
+        }
+        p {
+            color: #374151;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px 10px;
+            font-size: 16px;
+            color: white;
+            background: #2563eb;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 10px rgba(37, 99, 235, 0.3);
+        }
+        .button:hover {
+            background: #1e40af;
+            transform: translateY(-3px);
+        }
+        .author {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>โครงการ Machine Learning & Neural Network</h1>
+        <p><strong>พัฒนาโดย:</strong> ไพสิฐ เกษมเทวินทร์ | รหัสนักศึกษา: 6504062660029</p>
+
+        <h2>1. การเตรียมข้อมูล (Data Preparation)</h2>
+        <p>โปรเจกต์นี้ใช้ข้อมูลสองชุดหลัก ได้แก่ House Price Dataset และ MNIST Handwritten Digits Dataset</p>
+        <p><strong>House Price Dataset:</strong> เป็นข้อมูลเกี่ยวกับราคาบ้านโดยมีฟีเจอร์ต่างๆ เช่น พื้นที่บ้าน (area), จำนวนห้องนอน (bedrooms), จำนวนห้องน้ำ (bathrooms), จำนวนชั้น (stories) และที่จอดรถ (parking)</p>
+        <p><strong>MNIST Dataset:</strong> เป็นชุดข้อมูลภาพขนาด 28x28 pixel ที่เป็นตัวเลข 0-9 ซึ่งใช้สำหรับการจำแนกประเภทด้วย Neural Network</p>
+        <p>ก่อนนำข้อมูลมาใช้ เราทำการล้างข้อมูล (Data Cleaning) โดยการลบค่า Missing Values และจัดรูปแบบข้อมูลให้เหมาะสม รวมถึงการแบ่งข้อมูลออกเป็นชุด Train-Test โดยใช้ `train_test_split`</p>
+
+        <h2>2. ทฤษฎีของอัลกอริทึมที่ใช้</h2>
+        <h3>2.1 Machine Learning: Random Forest</h3>
+        <p>Random Forest เป็นอัลกอริทึมแบบ Ensemble Learning ที่ใช้หลาย Decision Trees เพื่อเพิ่มความแม่นยำและลด Overfitting</p>
+        <p>การทำงานของ Random Forest คือการสร้างหลายๆ ต้นไม้และนำผลลัพธ์มาคำนวณค่าเฉลี่ยเพื่อให้ได้ผลลัพธ์ที่ดีที่สุด</p>
+        
+        <h3>2.2 Neural Network: Convolutional Neural Network (CNN)</h3>
+        <p>CNN เป็นอัลกอริทึมที่เหมาะสำหรับการวิเคราะห์ภาพ โดยใช้ Convolutional Layers เพื่อตรวจจับ Feature สำคัญจากภาพ</p>
+        <p>ในโมเดลของเราใช้เลเยอร์ Conv2D, MaxPooling2D, Flatten, และ Dense Layers เพื่อสร้างโครงสร้างที่สามารถจำแนกตัวเลขจาก MNIST ได้อย่างแม่นยำ</p>
+
+        <h2>เมนู</h2>
+        <a href="/ml_model" class="button">ขั้นตอนการพัฒนาโมเดล</a>
+        <a href="/predict_ml" class="button">ทดสอบ ML Model</a>
+        <a href="/predict_nn" class="button">ทดสอบ NN Model</a>
+
+        <p class="author">© 2025 ไพสิฐ เกษมเทวินทร์ | All Rights Reserved</p>
+    </div>
+</body>
+</html>
